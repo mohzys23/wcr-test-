@@ -4,11 +4,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding-inline: 2rem;
+  overflow-y: auto;
 }
 
 @media screen and (max-width: 650px) {
   .auth-container {
-    padding: 1rem;
+    padding-inline: 1rem;
+    /* padding-block: 4rem; */
   }
 }

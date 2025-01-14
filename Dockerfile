@@ -14,6 +14,8 @@ RUN ng build --configuration=production
 
 FROM nginx:latest
 
-COPY --from=build /app/dist/wcr-frontend /usr/share/nginx/html
+# Update this line to match the Angular output location
+COPY --from=build /app/dist/wcr-frontend/browser /usr/share/nginx/html
 
 EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

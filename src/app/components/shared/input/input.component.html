@@ -1,0 +1,37 @@
+<style>
+  .input-wraper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .input-label {
+    color: #A4A4A4;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .input {
+     padding: 0.85rem;
+     border: 1px solid #d6d5d5;
+     outline: none;
+     border-radius: 8px;
+     font-size: 16px;
+  }
+
+  .input::placeholder {
+    font-size: 14px;
+    color: #4d4d4d;
+  }
+</style>
+
+<div class="input-wraper">
+  <label class="input-label">{{ label }}</label>
+  <input
+    class="input"
+    matInput
+    [type]="type"
+    [placeholder]="placeholder"
+    [formControl]="control"
+    [required]="required"
+  />
+</div>

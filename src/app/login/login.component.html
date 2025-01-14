@@ -1,6 +1,48 @@
-<main class="login-container">
-  <button mat-icon-button class="more-button">
-    login works!
-    <mat-icon>more_vert</mat-icon>
-  </button>
-</main>
+<form class="login-container">
+  <div class="login-text-content">
+    <mat-card-title class="title">Sign In</mat-card-title>
+    <mat-card-subtitle class="subtitle"
+      >Welcome back! Please enter your details</mat-card-subtitle
+    >
+  </div>
+
+  <div class="form-container">
+    <app-input
+      label="Email"
+      type="email"
+      placeholder="Email"
+      [control]="emailControl"
+      [required]="true"
+    ></app-input>
+
+    <app-input
+      label="Password"
+      type="password"
+      placeholder="Password"
+      [control]="passwordControl"
+      [required]="true"
+    ></app-input>
+
+    <div class="remember-section">
+      <div class="remember-text">
+        <mat-pseudo-checkbox></mat-pseudo-checkbox><span> Remember me</span>
+      </div>
+      <a href="/forget-password">Forget-Password</a>
+    </div>
+  </div>
+
+  <button class="submit-btn" mat-flat-button>Sign In</button>
+
+  <div class="login-apps-container">
+     <div class="separator">
+        <div class="lines"></div>
+        <span>or</span> 
+        <div class="lines"></div>
+     </div>
+     <div class="btn-container">
+      <button class="google-btn"><mat-icon>google</mat-icon>Sign in with Google</button>
+      <button class="apple-btn"><mat-icon>apple</mat-icon>Sign in with Apple</button>
+     </div>
+     <p class="create-account-text">Don't have an account? <a href="/signup">Sign Up</a> </p>
+  </div>
+</form>

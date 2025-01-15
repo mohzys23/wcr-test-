@@ -59,7 +59,7 @@
     </div>
   </div>
 
-  <button class="submit-btn" mat-flat-button>Sign Up</button>
+  <button (click)="onSubmit($event)" class="submit-btn" mat-flat-button>Sign Up</button>
 
   <div class="signup-apps-container">
     <div class="separator">
@@ -69,10 +69,10 @@
     </div>
     <div class="btn-container">
       <button class="google-btn">
-        <mat-icon>google</mat-icon>Sign up with Google
+        <mat-icon fontIcon="google"></mat-icon>Sign up with Google
       </button>
       <button class="apple-btn">
-        <mat-icon>apple</mat-icon>Sign up with Apple
+        <mat-icon fontIcon="apple"></mat-icon>Sign up with Apple
       </button>
     </div>
     <p class="create-account-text">

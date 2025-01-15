@@ -31,7 +31,7 @@
     </div>
   </div>
 
-  <button class="submit-btn" mat-flat-button>Sign In</button>
+  <button (click)="onLogin($event)" class="submit-btn" mat-flat-button>Sign In</button>
 
   <div class="login-apps-container">
      <div class="separator">
@@ -40,8 +40,8 @@
         <div class="lines"></div>
      </div>
      <div class="btn-container">
-      <button class="google-btn"><mat-icon>google</mat-icon>Sign in with Google</button>
-      <button class="apple-btn"><mat-icon>apple</mat-icon>Sign in with Apple</button>
+      <button class="google-btn"><mat-icon fontIcon="google"></mat-icon>Sign in with Google</button>
+      <button class="apple-btn"><mat-icon fontIcon="apple"></mat-icon>Sign in with Apple</button>
      </div>
      <p class="create-account-text">Don't have an account? <a href="/signup">Sign Up</a> </p>
   </div>

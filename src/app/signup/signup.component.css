@@ -38,7 +38,7 @@
 .input-container {
   display: flex;
   width: 100%;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 1rem;
   justify-content: space-between;
 }
@@ -127,5 +127,9 @@ a {
 @media screen and (max-width: 650px) {
   .signup-container {
     padding: 2rem 1rem;
+  }
+
+  .input-container {
+    flex-direction: column;
   }
 }

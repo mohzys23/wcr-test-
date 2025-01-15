@@ -1,5 +1,6 @@
 .signup-container {
-  max-width: 100%;
+
+  max-width: 400px;
   background: #ffffff;
   margin-inline: auto;
   display: flex;

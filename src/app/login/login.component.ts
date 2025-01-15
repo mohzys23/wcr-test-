@@ -6,6 +6,7 @@ import { InputComponent } from '../components/shared/input/input.component';
 import { FormControl } from '@angular/forms';
 import { MatPseudoCheckboxModule } from '@angular/material/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -28,9 +29,9 @@ export class LoginComponent {
       password: this.passwordControl.value,
     }
 
-    this.http.post('http://localhost:3030/auth/login', userData, {
+    this.http.post(`${environment.apiUrl}/auth/login`, userData, {
       headers: {
-        'X-Api-Key': "I'M_A_FRONTEND_DEVELOPER_AND_I_WANT_TO_JOIN_THE_TEAM",
+        'X-Api-Key': environment.apiKey,
       }
     }).subscribe((response) => {
        console.log("login response:", response)

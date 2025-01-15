@@ -6,6 +6,7 @@ import { MatPseudoCheckboxModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { InputComponent } from '../components/shared/input/input.component';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-signup',
@@ -37,9 +38,9 @@ export class SignupComponent {
     }
 
 
-    this.http.post("http://localhost:3030/auth/register", userData, {
+    this.http.post(`${environment.apiUrl}/auth/register`, userData, {
       headers: {
-        'X-Api-Key': "I'M_A_FRONTEND_DEVELOPER_AND_I_WANT_TO_JOIN_THE_TEAM",
+        'X-Api-Key': environment.apiKey
       }
 }).subscribe((response) => {
       console.log('signup response:', response);

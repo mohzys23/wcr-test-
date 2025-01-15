@@ -1,59 +1,158 @@
-# WcrFrontend
+Here's the updated `README.md` without the Dockerfile explanation, focusing just on the process to run it:
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
+# wcr-frontend
 
-## Development server
+The `wcr-frontend` is an Angular application designed for [your app description]. This guide will show you how to run the app both locally and in a Docker container.
 
-To start a local development server, run:
+---
+
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Running Locally](#running-locally)
+- [Running with Docker](#running-with-docker)
+- [Building the App](#building-the-app)
+- [Testing](#testing)
+- [Environment Variables
+  ](#environment-variables)
+
+---
+
+## Prerequisites
+
+Before getting started, make sure you have the following tools installed:
+
+- **[Node.js](https://nodejs.org/)** (v14 or later)
+- **[npm](https://www.npmjs.com/)** (comes with Node.js)
+- **[Docker](https://www.docker.com/)** (for containerized environment)
+
+---
+
+## Running Locally
+
+To run the Angular app locally on your machine, follow these steps:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/mohzys23/wcr-test-.git
+cd wcr-frontend
+```
+
+### 2. Install Dependencies
+
+Install all necessary dependencies using `npm`:
+
+```bash
+npm install
+```
+
+### 3. Start the Development Server
+
+Run the following command to start the app:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### 4. Access the App
 
-## Code scaffolding
+Open your browser and go to:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+You can now access the app locally. It will automatically reload if you make any changes to the source code.
+
+---
+
+## Running with Docker
+
+To run the Angular app within a Docker container, follow these steps:
+
+### 1. Build the Docker Image
+
+To build the Docker image, run the following command in the project root:
 
 ```bash
-ng generate --help
+docker build -t wcr-frontend .
 ```
 
-## Building
+This will create a Docker image named `wcr-frontend`.
 
-To build the project run:
+### 2. Run the Docker Container
+
+Run the app in a Docker container with the following command:
 
 ```bash
-ng build
+docker run -p 80:80 wcr-frontend
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+This maps port 80 of the container to port 80 on your local machine. You can change the port mapping as needed (e.g., `-p 8080:80`).
 
-## Running unit tests
+### 3. Access the App
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Once the container is running, open your browser and visit:
+
+```
+http://localhost
+```
+
+The app should now be accessible within the container.
+
+---
+
+## Building the App
+
+To create a production build of the app, run:
+
+```bash
+ng build --production
+```
+
+The compiled files will be available in the `dist/` directory.
+
+---
+
+## Testing
+
+### Unit Tests
+
+To run unit tests using **Karma** and  **Jasmine** , use the following command:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+This will run the unit tests in watch mode. To stop the tests, press `Ctrl + C`.
 
-For end-to-end (e2e) testing, run:
+### End-to-End Tests
+
+For end-to-end testing, **Protractor** is used:
 
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+This will execute the end-to-end tests on a live instance of the app.
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Environment Variables
+
+You can configure environment-specific variables in the `src/environments` folder:
+
+* `environment.ts` for development environment
+* `environment.prod.ts` for production environment
+
+Example of `environment.ts`:
+
+```typescript
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:3000/api'
+};
+```
+
+Modify the `apiUrl` or any other configuration for your specific needs.

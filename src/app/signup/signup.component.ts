@@ -4,13 +4,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatPseudoCheckboxModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
-import { InputComponent } from '../components/shared/input/input.component';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { SharedModule } from '../shared/shared.module';
 
 @Component({
   selector: 'app-signup',
-  imports: [MatButtonModule, MatIconModule, MatCardModule, InputComponent, MatPseudoCheckboxModule, MatButtonModule],
+  imports: [MatButtonModule, MatIconModule, MatCardModule, MatPseudoCheckboxModule, MatButtonModule, SharedModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
 })

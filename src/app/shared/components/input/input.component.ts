@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { FormControl, FormGroupDirective, NgForm, ReactiveFormsModule } from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-input',

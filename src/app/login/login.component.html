@@ -1,3 +1,5 @@
+<app-alert [alertType]="alertType" [message]="message"></app-alert>
+
 <form class="login-container">
   <div class="login-text-content">
     <mat-card-title class="title">Sign In</mat-card-title>
@@ -31,20 +33,27 @@
     </div>
   </div>
 
-  <button (click)="onLogin($event)" class="submit-btn" mat-flat-button>Sign In</button>
-
-  <app-button buttonType="mat-stroked-button" text="Basic"></app-button>
+  <button (click)="onLogin($event)" class="submit-btn" [disabled]="isLoading" mat-flat-button>
+    <span *ngIf="!isLoading">Sign In</span>
+    <mat-spinner *ngIf="isLoading" diameter="20" class="mat-spinner-color"></mat-spinner>
+  </button>
 
   <div class="login-apps-container">
-     <div class="separator">
-        <div class="lines"></div>
-        <span>or</span> 
-        <div class="lines"></div>
-     </div>
-     <div class="btn-container">
-      <button class="google-btn"><mat-icon fontIcon="google"></mat-icon>Sign in with Google</button>
-      <button class="apple-btn"><mat-icon fontIcon="apple"></mat-icon>Sign in with Apple</button>
-     </div>
-     <p class="create-account-text">Don't have an account? <a href="/signup">Sign Up</a> </p>
+    <div class="separator">
+      <div class="lines"></div>
+      <span>or</span>
+      <div class="lines"></div>
+    </div>
+    <div class="btn-container">
+      <button class="google-btn">
+        <mat-icon fontIcon="google"></mat-icon>Sign in with Google
+      </button>
+      <button class="apple-btn">
+        <mat-icon fontIcon="apple"></mat-icon>Sign in with Apple
+      </button>
+    </div>
+    <p class="create-account-text">
+      Don't have an account? <a href="/signup">Sign Up</a>
+    </p>
   </div>
 </form>

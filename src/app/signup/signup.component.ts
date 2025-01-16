@@ -7,10 +7,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { SharedModule } from '../shared/shared.module';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-signup',
-  imports: [MatButtonModule, MatIconModule, MatCardModule, MatPseudoCheckboxModule, MatButtonModule, SharedModule],
+  imports: [NgIf, MatProgressSpinner, MatButtonModule, MatIconModule, MatCardModule, MatPseudoCheckboxModule, MatButtonModule, SharedModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
 })
@@ -22,11 +24,16 @@ export class SignupComponent {
   nameControl = new FormControl('');
   lastNameControl = new FormControl('');
 
-  constructor(private http: HttpClient) {}
+  message = ""
+  alertType = ""
+  isLoading = false
+
+  constructor(private http: HttpClient) { }
 
 
   onSubmit(event: Event) {
     event.preventDefault()
+    this.isLoading = true
 
 
     const userData = {
@@ -38,13 +45,31 @@ export class SignupComponent {
     }
 
 
-    this.http.post(`${environment.apiUrl}/auth/register`, userData, {
-      headers: {
-        'X-Api-Key': environment.apiKey
-      }
-}).subscribe((response) => {
-      console.log('signup response:', response);
-    })
+      this.http.post(`${environment.apiUrl}/auth/register`, userData, {
+        headers: {
+          'X-Api-Key': environment.apiKey
+        }
+      }).subscribe({
+        next: (res: any) => {
+          const response = res.message
+          console.log('signup response:', res);
+          this.alertType = "success"
+          this.message = response
+          this.isLoading = false
+        },
+        error: (err: any) => {
+          console.log("err", err)
+          this.alertType = "error"
+          this.message = err?.error.message || 'An error occurred during signup.';
+          this.isLoading = false
+        }
+      })
+
+
+    // Hide the alert after 3 seconds
+    setTimeout(() => {
+      this.message = '';
+    }, 3000);
   }
 }
 

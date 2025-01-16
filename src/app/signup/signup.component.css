@@ -123,7 +123,9 @@ a {
   cursor: pointer;
 }
 
-
+.mat-spinner-color::ng-deep circle{
+stroke: #FFFFFF !important;
+}
 
 @media screen and (max-width: 650px) {
   .signup-container {

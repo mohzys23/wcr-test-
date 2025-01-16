@@ -1,0 +1,37 @@
+.alert {
+  width: 100%;
+  min-width: 170px;
+  max-width: 250px;
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 0.5rem;
+  color: white;
+  position: fixed;
+  top: 1rem;
+  margin-inline: auto;
+  left: 0;
+  right: 0;
+  word-wrap: wrap;
+  text-align: center;
+}
+
+
+.success {
+  background: #008000b3 !important;
+}
+
+.warning {
+  background: #c1c163 !important;
+}
+
+.error {
+  background: #c3002fbd !important;
+}
+
+
+
+@media screen and (max-width: 650px) {
+  .alert {
+    top: 0.65rem;
+  }
+}

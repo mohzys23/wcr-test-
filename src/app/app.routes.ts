@@ -7,8 +7,7 @@ import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-l
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const routes: Routes = [
-  // Redirect root path to /login
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' }, // Default redirect
 
   {
     path: '',
@@ -25,6 +24,5 @@ export const routes: Routes = [
       { path: '', component: DashboardComponent },
     ],
   },
-  // Catch-all route for 404
-  { path: '**', component: PagenotfoundComponent },
+  { path: '**', component: PagenotfoundComponent }, // 404 handling
 ];

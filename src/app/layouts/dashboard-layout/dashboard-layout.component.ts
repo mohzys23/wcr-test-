@@ -13,6 +13,7 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-dashboard-layout',
   templateUrl: './dashboard-layout.component.html',
   styleUrl: './dashboard-layout.component.css',
+  standalone: true,  
   imports: [
     RouterOutlet,
     AsyncPipe,

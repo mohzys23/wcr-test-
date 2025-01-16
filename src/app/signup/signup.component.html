@@ -1,99 +1,103 @@
 <app-alert [alertType]="alertType" [message]="message"></app-alert>
 
-<div style="text-align: center">
-  <canvas id="canvas"></canvas>
-  <form class="signup-container">
-    <div class="signup-text-content">
-      <mat-card-title class="title">Sign Up</mat-card-title>
-      <mat-card-subtitle class="subtitle"
-        >Welcome back! Please enter your details</mat-card-subtitle
-      >
-    </div>
+<form class="signup-container" *ngIf="active === 'signupActive'">
+  <div class="signup-text-content">
+    <mat-card-title class="title">Create Account</mat-card-title>
+    <mat-card-subtitle class="subtitle"
+      >Create a free account to continue on our platform.</mat-card-subtitle
+    >
+  </div>
 
-    <div class="form-container">
-      <div class="input-container">
-        <app-input
-          label="First Name"
-          type="text"
-          placeholder="First name"
-          [control]="nameControl"
-          [required]="true"
-        ></app-input>
-
-        <app-input
-          label="Last Name"
-          type="text"
-          placeholder="Last name"
-          [control]="lastNameControl"
-          [required]="true"
-        ></app-input>
-      </div>
-
+  <div class="form-container">
+    <div class="input-container">
       <app-input
-        label="Email"
-        type="email"
-        placeholder="Email"
-        [control]="emailControl"
+        class="half-input"
+        label="First Name"
+        type="text"
+        placeholder="First name"
+        [control]="nameControl"
         [required]="true"
       ></app-input>
 
-      <div class="input-container">
-        <app-input
-          label="Password"
-          type="password"
-          placeholder="Password"
-          [control]="passwordControl"
-          [required]="true"
-        ></app-input>
-
-        <app-input
-          label="Repeat Password"
-          type="password"
-          placeholder="Repeat password"
-          [control]="repeatpasswordControl"
-          [required]="true"
-        ></app-input>
-      </div>
-
-      <div class="remember-section">
-        <div class="remember-text">
-          <mat-pseudo-checkbox></mat-pseudo-checkbox><span> Remember me</span>
-        </div>
-        <a href="/forget-password">Forget-Password</a>
-      </div>
+      <app-input
+        class="half-input"
+        label="Last Name"
+        type="text"
+        placeholder="Last name"
+        [control]="lastNameControl"
+        [required]="true"
+      ></app-input>
     </div>
 
-    <button
-      (click)="onSubmit($event)"
-      class="submit-btn"
-      [disabled]="isLoading"
-      mat-flat-button
-    >
-      <span *ngIf="!isLoading">Sign Up</span>
-      <mat-spinner
-        *ngIf="isLoading"
-        diameter="20"
-        class="mat-spinner-color"
-      ></mat-spinner>
-    </button>
+    <app-input
+      label="Email"
+      type="email"
+      placeholder="Email"
+      [control]="emailControl"
+      [required]="true"
+    ></app-input>
 
-    <div class="signup-apps-container">
-      <div class="separator">
-        <div class="lines"></div>
-        <span>or</span>
-        <div class="lines"></div>
+    <div class="input-container">
+      <app-input
+        class="half-input"
+        label="Password"
+        type="password"
+        placeholder="Password"
+        [control]="passwordControl"
+        [required]="true"
+      ></app-input>
+
+      <app-input
+        class="half-input"
+        label="Repeat Password"
+        type="password"
+        placeholder="Repeat password"
+        [control]="repeatpasswordControl"
+        [required]="true"
+      ></app-input>
+    </div>
+
+    <div class="remember-section">
+      <div class="remember-text">
+        <mat-pseudo-checkbox></mat-pseudo-checkbox><span> Remember me</span>
       </div>
-      <div class="btn-container">
-        <button class="google-btn">
+      <a href="/forget-password">Forget-Password</a>
+    </div>
+  </div>
+
+  <button
+    (click)="onSubmit($event)"
+    class="submit-btn"
+    [disabled]="isLoading"
+    mat-flat-button
+  >
+    <span *ngIf="!isLoading">Sign Up</span>
+    <mat-spinner
+      *ngIf="isLoading"
+      diameter="20"
+      class="mat-spinner-color"
+    ></mat-spinner>
+  </button>
+
+  <div class="signup-apps-container">
+    <div class="separator">
+      <div class="lines"></div>
+      <span>or</span>
+      <div class="lines"></div>
+    </div>
+    <div class="btn-container">
+        <button class="google-btn" disabled>
           <mat-icon fontIcon="google"></mat-icon>Sign up with Google
         </button>
-        <button class="apple-btn">
+        <button class="apple-btn" disabled>
           <mat-icon fontIcon="apple"></mat-icon>Sign up with Apple
         </button>
       </div>
-      <p class="create-account-text">
-        Have an account? <a href="/login">Sign In</a>
-      </p>
-    </div>
-  </form>
-</div>
+    <p class="create-account-text">
+  &copy; <span>Resource</span> | 
+  <a href="https://github.com/mohzys23/wcr-test-.git" target="_blank" rel="noopener noreferrer">
+    GitHub Repository
+  </a>
+</p>
+  </div>
+</form>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -9,16 +9,19 @@ import { environment } from '../../environments/environment';
 import { SharedModule } from '../shared/shared.module';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { NgIf } from '@angular/common';
-import { Application } from '@splinetool/runtime';
 
 @Component({
   selector: 'app-signup',
   imports: [NgIf, MatProgressSpinner, MatButtonModule, MatIconModule, MatCardModule, MatPseudoCheckboxModule, MatButtonModule, SharedModule],
   templateUrl: './signup.component.html',
-  styleUrl: './signup.component.css'
+  styleUrl: './signup.component.css',
+  standalone: true,
 })
 
-export class SignupComponent implements OnInit {
+export class SignupComponent {
+  @Input() active: string = '';
+
+
   emailControl = new FormControl("")
   passwordControl = new FormControl('');
   repeatpasswordControl = new FormControl('');
@@ -46,25 +49,25 @@ export class SignupComponent implements OnInit {
     }
 
 
-      this.http.post(`${environment.apiUrl}/auth/register`, userData, {
-        headers: {
-          'X-Api-Key': environment.apiKey
-        }
-      }).subscribe({
-        next: (res: any) => {
-          const response = res.message
-          console.log('signup response:', res);
-          this.alertType = "success"
-          this.message = response
-          this.isLoading = false
-        },
-        error: (err: any) => {
-          console.log("err", err)
-          this.alertType = "error"
-          this.message = err?.error.message || 'An error occurred during signup.';
-          this.isLoading = false
-        }
-      })
+    this.http.post(`${environment.apiUrl}/auth/register`, userData, {
+      headers: {
+        'X-Api-Key': environment.apiKey
+      }
+    }).subscribe({
+      next: (res: any) => {
+        const response = res.message
+        console.log('signup response:', res);
+        this.alertType = "success"
+        this.message = response
+        this.isLoading = false
+      },
+      error: (err: any) => {
+        console.log("err", err)
+        this.alertType = "error"
+        this.message = err?.error.message || 'An error occurred during signup.';
+        this.isLoading = false
+      }
+    })
 
 
     // Hide the alert after 3 seconds
@@ -72,11 +75,5 @@ export class SignupComponent implements OnInit {
       this.message = '';
     }, 3000);
   }
-
-  ngOnInit(): void {
-      const canvas = document.getElementById('canvas') as HTMLCanvasElement;
-      const app = new Application(canvas);
-      app.load('https://prod.spline.design/dsdsIbMwMNnRxDw5/scene.splinecode');
-    }
 }
 

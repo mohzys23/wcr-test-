@@ -5,7 +5,8 @@ import { Component, Input } from '@angular/core';
   selector: 'app-alert',
   imports: [NgIf, NgClass],
   templateUrl: './alert.component.html',
-  styleUrl: './alert.component.css'
+  styleUrl: './alert.component.css',
+  standalone: true,
 })
 
 // alertType = 'success' || 'error' || 'warning';

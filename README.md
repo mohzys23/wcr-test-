@@ -113,32 +113,6 @@ ng build --production
 
 The compiled files will be available in the `dist/` directory.
 
----
-
-## Testing
-
-### Unit Tests
-
-To run unit tests using **Karma** and  **Jasmine** , use the following command:
-
-```bash
-ng test
-```
-
-This will run the unit tests in watch mode. To stop the tests, press `Ctrl + C`.
-
-### End-to-End Tests
-
-For end-to-end testing, **Protractor** is used:
-
-```bash
-ng e2e
-```
-
-This will execute the end-to-end tests on a live instance of the app.
-
----
-
 ## Environment Variables
 
 You can configure environment-specific variables in the `src/environments` folder:

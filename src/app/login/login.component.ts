@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -9,7 +9,6 @@ import { environment } from '../../environments/environment';
 import { SharedModule } from "../shared/shared.module";
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { NgIf } from '@angular/common';
-import { Application } from '@splinetool/runtime';
 
 
 
@@ -22,7 +21,9 @@ import { Application } from '@splinetool/runtime';
 })
 
 
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  @Input() active: string = '';
+
   emailControl = new FormControl("")
   passwordControl = new FormControl('');
 
@@ -68,12 +69,6 @@ export class LoginComponent implements OnInit {
     setTimeout(() => {
       this.message = '';
     }, 3000);
-  }
-
-  ngOnInit(): void {
-    const canvas = document.getElementById('canvas') as HTMLCanvasElement;
-    const app = new Application(canvas);
-    app.load('https://prod.spline.design/dsdsIbMwMNnRxDw5/scene.splinecode');
   }
 }
 

@@ -3,10 +3,46 @@
   min-height: 100vh;
   background: #f6fafd;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-block: 1rem;
   padding-inline: 2rem;
+}
+
+.auth-inner-wrapper {
+  width: 100%;
+  max-width: 550px;
+}
+
+.btn-container {
+  display: flex;
+  background: white;
+  border-radius: 22px;
+  border-bottom: 1px solid rgba(214, 213, 213, 0.33);
+  padding: 0.3rem;
+  margin-block: 1rem;
+  background: #005cbb;
+  box-shadow: 0px 0px 3px -2px #b5b5b5b0;
+}
+
+.tab-btn {
+  width: 100%;
+  padding: 0.65rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: none;
+  background: none;
+  color: #ffffff;
+  border-radius: 18px;
+}
+
+.loginActive,
+.signupActive {
+  background: #ffffff;
+  color: #4d4d4d;
 }
 
 @media screen and (max-width: 650px) {

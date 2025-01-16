@@ -5,6 +5,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-input',
   imports: [ReactiveFormsModule],
+  standalone: true,  
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.css']
 })

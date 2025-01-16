@@ -1,6 +1,30 @@
 <div class="auth-container">
+  <canvas id="canvas"></canvas>
+  <div class="auth-inner-wrapper">
+    <div class="btn-container">
+      <button
+        [ngClass]="['tab-btn', activeLogin]"
+        (click)="swicthTabLogin('loginActive')"
+      >
+        Sign In
+      </button>
+      <button
+        [ngClass]="['tab-btn', activeSignup]"
+        (click)="swicthTabSignup('signupActive')"
+      >
+        Sign Up
+      </button>
+    </div>
+
+    <!-- Conditionally render components based on the active tab -->
+    <div *ngIf="activeLogin === 'loginActive'">
+      <app-login [active]="activeLogin"></app-login>
+    </div>
+
+    <div *ngIf="activeSignup === 'signupActive'">
+      <app-signup [active]="activeSignup"></app-signup>
+    </div>
+
     <router-outlet></router-outlet>
+  </div>
 </div>
-
-
-

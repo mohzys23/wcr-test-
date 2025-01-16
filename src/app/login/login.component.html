@@ -1,59 +1,72 @@
 <app-alert [alertType]="alertType" [message]="message"></app-alert>
 
-<form class="login-container">
-  <div class="login-text-content">
-    <mat-card-title class="title">Sign In</mat-card-title>
-    <mat-card-subtitle class="subtitle"
-      >Welcome back! Please enter your details</mat-card-subtitle
-    >
-  </div>
+<div style="text-align: center">
+  <canvas id="canvas"></canvas>
 
-  <div class="form-container">
-    <app-input
-      label="Email"
-      type="email"
-      placeholder="Email"
-      [control]="emailControl"
-      [required]="true"
-    ></app-input>
+  <form class="login-container">
+    <div class="login-text-content">
+      <mat-card-title class="title">Sign In</mat-card-title>
+      <mat-card-subtitle class="subtitle"
+        >Welcome back! Please enter your details</mat-card-subtitle
+      >
+    </div>
 
-    <app-input
-      label="Password"
-      type="password"
-      placeholder="Password"
-      [control]="passwordControl"
-      [required]="true"
-    ></app-input>
+    <div class="form-container">
+      <app-input
+        label="Email"
+        type="email"
+        placeholder="Email"
+        [control]="emailControl"
+        [required]="true"
+      ></app-input>
 
-    <div class="remember-section">
-      <div class="remember-text">
-        <mat-pseudo-checkbox></mat-pseudo-checkbox><span> Remember me</span>
+      <app-input
+        label="Password"
+        type="password"
+        placeholder="Password"
+        [control]="passwordControl"
+        [required]="true"
+      ></app-input>
+
+      <div class="remember-section">
+        <div class="remember-text">
+          <mat-pseudo-checkbox></mat-pseudo-checkbox><span> Remember me</span>
+        </div>
+        <a href="/forget-password">Forget-Password</a>
       </div>
-      <a href="/forget-password">Forget-Password</a>
     </div>
-  </div>
 
-  <button (click)="onLogin($event)" class="submit-btn" [disabled]="isLoading" mat-flat-button>
-    <span *ngIf="!isLoading">Sign In</span>
-    <mat-spinner *ngIf="isLoading" diameter="20" class="mat-spinner-color"></mat-spinner>
-  </button>
+    <button
+      (click)="onLogin($event)"
+      class="submit-btn"
+      [disabled]="isLoading"
+      mat-flat-button
+    >
+      <span *ngIf="!isLoading">Sign In</span>
+      <mat-spinner
+        *ngIf="isLoading"
+        diameter="20"
+        class="mat-spinner-color"
+      ></mat-spinner>
+    </button>
 
-  <div class="login-apps-container">
-    <div class="separator">
-      <div class="lines"></div>
-      <span>or</span>
-      <div class="lines"></div>
+    <div class="login-apps-container">
+      <div class="separator">
+        <div class="lines"></div>
+        <span>or</span>
+        <div class="lines"></div>
+      </div>
+      <div class="btn-container">
+        <button class="google-btn">
+          <mat-icon fontIcon="google"></mat-icon>Sign in with Google
+        </button>
+        <button class="apple-btn">
+          <mat-icon fontIcon="apple"></mat-icon>Sign in with Apple
+        </button>
+      </div>
+      <p class="create-account-text">
+        Don't have an account? <a href="/signup">Sign Up</a>
+      </p>
     </div>
-    <div class="btn-container">
-      <button class="google-btn">
-        <mat-icon fontIcon="google"></mat-icon>Sign in with Google
-      </button>
-      <button class="apple-btn">
-        <mat-icon fontIcon="apple"></mat-icon>Sign in with Apple
-      </button>
-    </div>
-    <p class="create-account-text">
-      Don't have an account? <a href="/signup">Sign Up</a>
-    </p>
-  </div>
-</form>
+  </form>
+</div>

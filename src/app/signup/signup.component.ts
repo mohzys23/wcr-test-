@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -9,6 +9,7 @@ import { environment } from '../../environments/environment';
 import { SharedModule } from '../shared/shared.module';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { NgIf } from '@angular/common';
+import { Application } from '@splinetool/runtime';
 
 @Component({
   selector: 'app-signup',
@@ -17,7 +18,7 @@ import { NgIf } from '@angular/common';
   styleUrl: './signup.component.css'
 })
 
-export class SignupComponent {
+export class SignupComponent implements OnInit {
   emailControl = new FormControl("")
   passwordControl = new FormControl('');
   repeatpasswordControl = new FormControl('');
@@ -71,5 +72,11 @@ export class SignupComponent {
       this.message = '';
     }, 3000);
   }
+
+  ngOnInit(): void {
+      const canvas = document.getElementById('canvas') as HTMLCanvasElement;
+      const app = new Application(canvas);
+      app.load('https://prod.spline.design/dsdsIbMwMNnRxDw5/scene.splinecode');
+    }
 }
 

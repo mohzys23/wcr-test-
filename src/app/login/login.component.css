@@ -120,6 +120,11 @@ a {
   stroke: #ffffff !important;
 }
 
+#canvas {
+  background: none !important;
+  margin-inline: auto;
+}
+
 @media screen and (max-width: 650px) {
   .login-container {
     padding: 2rem 1rem;

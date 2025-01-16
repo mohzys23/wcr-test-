@@ -22,7 +22,7 @@ import { Application } from '@splinetool/runtime';
 })
 
 
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   emailControl = new FormControl("")
   passwordControl = new FormControl('');
 
@@ -68,6 +68,12 @@ export class LoginComponent {
     setTimeout(() => {
       this.message = '';
     }, 3000);
+  }
+
+  ngOnInit(): void {
+    const canvas = document.getElementById('canvas') as HTMLCanvasElement;
+    const app = new Application(canvas);
+    app.load('https://prod.spline.design/dsdsIbMwMNnRxDw5/scene.splinecode');
   }
 }
 

@@ -3,8 +3,6 @@ import { RouterOutlet } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
 
 
-
-
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, SharedModule],
@@ -14,4 +12,5 @@ import { SharedModule } from './shared/shared.module';
 
 export class AppComponent {
   title = 'wcr-frontend';
+ 
 }

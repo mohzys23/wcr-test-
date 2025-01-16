@@ -69,7 +69,6 @@ export class SignupComponent {
       }
     })
 
-
     // Hide the alert after 3 seconds
     setTimeout(() => {
       this.message = '';

@@ -15,7 +15,6 @@
   text-align: center;
 }
 
-
 .success {
   background: #008000b3 !important;
 }
@@ -25,7 +24,7 @@
 }
 
 .error {
-  background: #c3002fbd !important;
+  background:rgb(195, 0, 3) !important;
 }
 
 

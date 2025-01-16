@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { NgClass, NgIf } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-alert',
-  imports: [],
+  imports: [NgIf, NgClass],
   templateUrl: './alert.component.html',
   styleUrl: './alert.component.css'
 })
-export class AlertComponent {
 
+// alertType = 'success' || 'error' || 'warning';
+export class AlertComponent {
+  @Input() alertType: String = 'success';
+  @Input() message: String = '';
 }

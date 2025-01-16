@@ -11,7 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrls: ['./button.component.css'],
 })
 export class ButtonComponent {
-  @Input() buttonType: string = 'mat-button'; // Default Material button type
+  @Input() buttonType: string = ''; // Default Material button type
   @Input() icon: string = ''; // Icon name for Material Icon
   @Input() ariaLabel: string = ''; // ARIA label for accessibility
   @Input() buttonClass: string = ''; // Additional CSS classes

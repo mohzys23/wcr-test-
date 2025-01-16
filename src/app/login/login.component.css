@@ -1,5 +1,4 @@
 .login-container {
-
   max-width: 400px;
   background: #ffffff;
   margin-inline: auto;
@@ -8,7 +7,7 @@
   gap: 1rem;
   box-shadow: 0px 0px 3px -2px #b5b5b5b0;
   padding: 2rem;
-  border-radius: 16px; 
+  border-radius: 16px;
   text-align: center;
 }
 
@@ -24,7 +23,7 @@
 }
 
 .subtitle {
-  color: #A4A4A4;
+  color: #a4a4a4;
   font-size: 1rem;
   font-weight: 400;
 }
@@ -44,7 +43,8 @@
   items-align: center;
 }
 
-.remember-text, .create-account-text {
+.remember-text,
+.create-account-text {
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -52,14 +52,14 @@
 }
 
 a {
-   font-size: 14px;
-   color:rgb(13, 71, 173);
-   text-decoration: none;
+  font-size: 14px;
+  color: rgb(13, 71, 173);
+  text-decoration: none;
 }
 
 .mat-pseudo-checkbox {
-    width: 14px;
-    height: 14px;
+  width: 14px;
+  height: 14px;
 }
 
 .submit-btn {
@@ -101,7 +101,8 @@ a {
   align-items: center;
 }
 
-.google-btn, .apple-btn {
+.google-btn,
+.apple-btn {
   display: flex;
   flex-grow: 1;
   align-items: center;
@@ -115,6 +116,9 @@ a {
   cursor: pointer;
 }
 
+.mat-spinner-color::ng-deep circle {
+  stroke: #ffffff !important;
+}
 
 @media screen and (max-width: 650px) {
   .login-container {

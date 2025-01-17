@@ -20,15 +20,14 @@
     "@angular/platform-browser": "^19.0.0",
     "@angular/platform-browser-dynamic": "^19.1.1",
     "@angular/router": "^19.0.0",
-    "@splinetool/runtime": "^1.9.59",
     "rxjs": "~7.8.0",
     "typescript": "^5.7.3",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.0.7",
-    "@angular/compiler-cli": "^19.0.0",
     "@angular/cli": "^19.0.7",
+    "@angular/compiler-cli": "^19.0.0",
     "@types/jasmine": "~5.1.0"
   }
 }

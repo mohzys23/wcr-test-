@@ -1,8 +1,7 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterOutlet } from '@angular/router';
-import { Application } from '@splinetool/runtime';
 import { LoginComponent } from '../../login/login.component';
 import { SignupComponent } from '../../signup/signup.component';
 
@@ -12,10 +11,11 @@ import { SignupComponent } from '../../signup/signup.component';
   templateUrl: './auth-layout.component.html',
   styleUrl: './auth-layout.component.css',
   standalone: true,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA], // Add this line
 })
 
 
-export class AuthLayoutComponent implements OnInit {
+export class AuthLayoutComponent {
   activeLogin = "loginActive"
   activeSignup = ""
 
@@ -27,11 +27,5 @@ export class AuthLayoutComponent implements OnInit {
   swicthTabSignup = (value: any) => {
     this.activeSignup = value
     this.activeLogin = ""
-  }
-
-  ngOnInit(): void {
-    const canvas = document.getElementById('canvas') as HTMLCanvasElement;
-    const app = new Application(canvas);
-    app.load('https://prod.spline.design/dsdsIbMwMNnRxDw5/scene.splinecode');
   }
 }

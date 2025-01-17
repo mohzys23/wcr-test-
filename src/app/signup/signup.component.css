@@ -42,15 +42,11 @@
   justify-content: space-between;
 }
 
-.remember-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: space-between;
-  items-align: center;
+.mat-icon {
+  fill: blue;
+  color: blue !important;
 }
 
-.remember-text,
 .create-account-text {
   display: flex;
   align-items: center;
@@ -132,10 +128,6 @@ a {
   stroke: #ffffff !important;
 }
 
-#canvas {
-  background: none !important;
-  margin-inline: auto;
-}
 
 @media screen and (max-width: 650px) {
   .signup-container {

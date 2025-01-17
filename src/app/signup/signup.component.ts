@@ -8,11 +8,11 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { SharedModule } from '../shared/shared.module';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
-import { NgIf } from '@angular/common';
+import { NgIf, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-signup',
-  imports: [NgIf, MatProgressSpinner, MatButtonModule, MatIconModule, MatCardModule, MatPseudoCheckboxModule, MatButtonModule, SharedModule],
+  imports: [NgIf, MatProgressSpinner, MatButtonModule, MatIconModule, MatCardModule, MatPseudoCheckboxModule, MatButtonModule, SharedModule, NgOptimizedImage],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css',
   standalone: true,

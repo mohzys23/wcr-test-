@@ -92,6 +92,11 @@ a {
   gap: 1rem;
 }
 
+.mat-icon {
+  fill: blue;
+  color: blue !important;
+}
+
 .btn-container {
   width: 100%;
   display: flex;
@@ -118,11 +123,6 @@ a {
 
 .mat-spinner-color::ng-deep circle {
   stroke: #ffffff !important;
-}
-
-#canvas {
-  background: none !important;
-  margin-inline: auto;
 }
 
 @media screen and (max-width: 650px) {

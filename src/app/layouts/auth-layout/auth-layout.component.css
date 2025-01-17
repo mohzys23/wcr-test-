@@ -45,6 +45,15 @@
   color: #4d4d4d;
 }
 
+
+
+#canvas {
+  width: auto;
+  background: none !important;
+  text-align: center;
+}
+
+
 @media screen and (max-width: 650px) {
   .auth-container {
     padding-inline: 1rem;
